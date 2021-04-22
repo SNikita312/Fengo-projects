@@ -1,0 +1,140 @@
+[
+  {
+    "id_product": 1,
+    "product_name": "Carded Cotton Shawl",
+    "price": 187,
+    "product_type": "Cardigan",
+    "colors": ["red", "blue", "black"],
+    "product_tag": {}
+  },
+  {
+    "id_product": 2,
+    "product_name": "Carded Cotton Shawl",
+    "price": 248,
+    "product_type": "Cardigan",
+    "colors": ["red", "blue", "black"],
+    "product_tag": {}
+  },
+  {
+    "id_product": 3,
+    "product_name": "Shetland Wool Full-Zip",
+    "price": 150,
+    "product_type": "Sweater",
+    "colors": ["red", "blue", "black"],
+    "product_tag": {
+      "tag_name": "sale",
+      "percent": 50
+    }
+  },
+  {
+    "id_product": 4,
+    "product_name": "Shetland Wool Full-Zip",
+    "price": 657,
+    "product_type": "Sweater",
+    "colors": ["red", "blue", "black"],
+    "product_tag": {}
+  },
+  {
+    "id_product": 5,
+    "product_name": "Mustard Yellow Ruffle",
+    "price": 478,
+    "product_type": "White Shirt",
+    "colors": ["red", "blue", "black"],
+    "product_tag": {}
+  },
+  {
+    "id_product": 6,
+    "product_name": "Mustard Ruffle",
+    "price": 550,
+    "product_type": "Shirt",
+    "colors": ["red", "blue", "black"],
+    "product_tag": {}
+  },
+  {
+    "id_product": 7,
+    "product_name": "Mustard White Ruffle",
+    "price": 500,
+    "product_type": "White Shirt",
+    "colors": ["red", "blue", "black"],
+    "product_tag": {
+      "tag_name": "new"
+    }
+  },
+  {
+    "id_product": 8,
+    "product_name": "Mustard White Ruffle",
+    "price": 500,
+    "product_type": "White Shirt",
+    "colors": ["red", "blue", "black"],
+    "product_tag": {
+      "tag_name": "new"
+    }
+  },
+  {
+    "id_product": 9,
+    "product_name": "Ruffle",
+    "price": 275,
+    "product_type": "White",
+    "colors": ["red", "blue", "black"],
+    "product_tag": {}
+  },
+  {
+    "id_product": 10,
+    "product_name": "Mustard",
+    "price": 870,
+    "product_type": "Shirt",
+    "colors": ["red", "blue", "black"],
+    "product_tag": {
+      "tag_name": "new"
+    }
+  },
+  {
+    "id_product": 11,
+    "product_name": "Red Ruffle",
+    "price": 435,
+    "product_type": "Sweater",
+    "colors": ["red", "blue", "black"],
+    "product_tag": {
+      "tag_name": "sale",
+      "percent": 35
+    }
+  },
+  {
+    "id_product": 12,
+    "product_name": "Mustard Red Ruffle",
+    "price": 125,
+    "product_type": "White Shirt",
+    "colors": ["red", "blue", "black"],
+    "product_tag": {
+      "tag_name": "out of stock",
+      "old_price": 170
+    }
+  },
+  {
+    "id_product": 13,
+    "product_name": "Mustard Red Ruffle",
+    "price": 350,
+    "product_type": "Shirt",
+    "colors": ["red", "blue", "black"],
+    "product_tag": {}
+  },
+  {
+    "id_product": 14,
+    "product_name": "Mustard Red Ruffle",
+    "price": 200,
+    "product_type": "White Shirt",
+    "colors": ["red", "blue", "black"],
+    "product_tag": {}
+  },
+  {
+    "id_product": 15,
+    "product_name": "Mustard Red Ruffle",
+    "price": 700,
+    "product_type": "White Shirt",
+    "colors": ["red", "blue", "black"],
+    "product_tag": {
+      "tag_name": "sale",
+      "percent": 40
+    }
+  }
+]
