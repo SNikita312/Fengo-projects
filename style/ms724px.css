@@ -1,0 +1,17 @@
+/* Error: Undefined variable.
+ *    ,
+ * 75 |     padding: 0 $padding-site
+ *    |                ^^^^^^^^^^^^^
+ *    '
+ *   ms724px.sass 75:16  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 75 \2502      padding: 0 $padding-site\d\a    \2502                 ^^^^^^^^^^^^^\a    \2575 \a   ms724px.sass 75:16  root stylesheet";
+}
