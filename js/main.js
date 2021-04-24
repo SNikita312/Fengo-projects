@@ -9,11 +9,10 @@ class ProductList {
         this.url = url;
         this.goods = [];
         this.allProducts = [];
-        // this.filtered = [];
+        this.filtered = [];
         this.getJson().then(data => this.handler(data));
         this.init();
     }
-
     getJson(url){
         return fetch(url ? url : `${API+this.url}`)
             .then(result => result.json())
@@ -23,15 +22,14 @@ class ProductList {
     }
     handler(data){
         this.goods = [...data];
-        console.log(this.goods);
-        this.render(this.getLimit());
+        this.fillAllProducts(this.getLimit());
+        this.render();
     }
-    render(limit){
-        this.fillAllProducts(limit);
+    render(){
         const block = document.querySelector(this.container);
-        for (let product of this.allProducts) {
+        this.allProducts.forEach(product => {
             block.insertAdjacentHTML('afterbegin', product.render());
-        }
+        });
     }
     fillAllProducts(limit) {
         for(let i = 0; this.allProducts.length < limit; i++) {
@@ -53,11 +51,22 @@ class ProductList {
             limit = 8;
         }
         console.log(document.body.clientWidth)
-        console.log(limit)
         return limit;
     }
     init(){
-        document.querySelector('.products__item-more').addEventListener('click', () => this.renderMore())
+        document.querySelector('.products__item-more').addEventListener('click', () => this.renderMore());
+        document.querySelector('.fa-search').addEventListener('click', () => {
+            this.filter(document.querySelector('.header__input').value);
+        });
+        document.querySelector('.header__input').addEventListener('input', () => this.realTimeFilter(document.querySelector('.header__input').value));
+        document.body.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (!e.target.classList.contains("header__input")) {
+                document.querySelector('.header__search_drop-down').style.display = "none";
+            } else {
+                document.querySelector('.header__search_drop-down').style.display = "block";
+            }
+        })
     }
     renderMore() {
         this.fillAllProducts((this.allProducts.length + this.getLimit()));
@@ -77,9 +86,52 @@ class ProductList {
             block.innerHTML = '<strong>No more products</strong>';
         }
     }
-    // filter(){
-    //
-    // }
+    filter(val){
+        if (val === '') {
+            document.querySelector(this.container).innerHTML =
+            `<div class="products__item-more">
+                <div><hr></div>
+                Show&nbsp;More
+                <div><hr></div>
+            </div>`;
+            document.querySelector('.products__item-more').addEventListener('click', () => this.renderMore());
+            this.getJson().then(data => this.handler(data));
+        } else {
+            const regexp = new RegExp(val, 'i');
+            this.filtered = this.goods.filter(product => regexp.test(product.product_name));
+            const block = document.querySelector(this.container);
+            if (this.filtered.length === 0) {
+                block.innerHTML = `<div class="products__item-more">No results were found for your search.</div>`;
+            } else {
+                block.innerHTML = " ";
+                this.filtered.forEach(product => {
+                    const productObj = new ProductItem(product);
+                    block.insertAdjacentHTML('afterbegin', productObj.render());
+                });
+            }
+            document.querySelector('.header__input').value = '';
+        }
+    }
+    realTimeFilter(val) {
+        const regExp = new RegExp(val, 'i');
+        this.filtered = this.goods.filter(product => regExp.test(product.product_name));
+        const filterBlock = new FilterList(this.filtered);
+        document.querySelector('.header__search_drop-down').style.display = "block";
+    }
+}
+class FilterList {
+    constructor(products = []) {
+        this.products = products;
+        this.init();
+    }
+    init() {
+        const block = document.querySelector(".header__search_drop-down");
+        block.innerHTML = '';
+        this.products.forEach(el => {
+            const product = new FilterItem(el);
+            block.insertAdjacentHTML('afterbegin', product.render());
+        });
+    }
 }
 class Item {
     constructor(el) {
@@ -227,6 +279,18 @@ class ProductItem extends Item {
             a += `<div class="${color}-block"></div>`
         }
         return a
+    }
+}
+class FilterItem {
+    constructor(element) {
+        this.product_name = element.product_name;
+        this.price = element.price;
+    }
+    render() {
+        return `<div class="products__item-desc">
+                    <h6 class="products__item-title">${this.product_name}</h6>
+                    <h6 class="products__item-price">$${this.price}</h6>
+                </div>`
     }
 }
 class Carousel {
