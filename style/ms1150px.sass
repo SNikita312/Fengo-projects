@@ -9,6 +9,19 @@
       grid-column: 8
     &__search
       grid-column: 8 / span 2
+      position: relative
+      &_drop-down
+        position: absolute
+        top: 30px
+        left: 0
+        z-index: 1
+        background-color: #fff
+        border: 1px solid #ccc
+        display: none
+        padding: 10px 13px
+        min-width: 250px
+        & > div
+          margin-bottom: 10px
   .menu
     grid-column: 4 / span 6
     &__list
