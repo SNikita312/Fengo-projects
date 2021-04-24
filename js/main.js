@@ -24,6 +24,7 @@ class ProductList {
         this.goods = [...data];
         this.fillAllProducts(this.getLimit());
         this.render();
+        new FilterList(this.goods);
     }
     render(){
         const block = document.querySelector(this.container);
@@ -66,7 +67,7 @@ class ProductList {
             } else {
                 document.querySelector('.header__search_drop-down').style.display = "block";
             }
-        })
+        });
     }
     renderMore() {
         this.fillAllProducts((this.allProducts.length + this.getLimit()));
@@ -115,7 +116,7 @@ class ProductList {
     realTimeFilter(val) {
         const regExp = new RegExp(val, 'i');
         this.filtered = this.goods.filter(product => regExp.test(product.product_name));
-        const filterBlock = new FilterList(this.filtered);
+        new FilterList(this.filtered);
         document.querySelector('.header__search_drop-down').style.display = "block";
     }
 }
@@ -281,13 +282,13 @@ class ProductItem extends Item {
         return a
     }
 }
-class FilterItem {
+class FilterItem extends Item{
     constructor(element) {
-        this.product_name = element.product_name;
-        this.price = element.price;
+        super(element);
     }
     render() {
         return `<div class="products__item-desc">
+                    <div class="products__item-small-img"></div>
                     <h6 class="products__item-title">${this.product_name}</h6>
                     <h6 class="products__item-price">$${this.price}</h6>
                 </div>`
