@@ -2182,6 +2182,21 @@ li {
   }
   .header__search {
     grid-column: 8/span 2;
+    position: relative;
+  }
+  .header__search_drop-down {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: none;
+    padding: 10px 13px;
+    min-width: 250px;
+  }
+  .header__search_drop-down > div {
+    margin-bottom: 10px;
   }
 
   .menu {
