@@ -20,14 +20,14 @@
             <a href="#" class="header__link header__link_4">Log In <span>or</span> Register</a>
             <a href="#" class="header__link header__link_4n">Log In</a>
             <label class="header__link_6">
-                <select name="currency">
+                <select name="currency" class="header__select">
                     <option value="">US Dollar</option>
                     <option value="">Euro</option>
                     <option value="">Pound St.</option>
                 </select>
             </label>
             <label class="header__link_7">
-                <select name="language">
+                <select name="language" class="header__select">
                     <option value="">English</option>
                     <option value="">Italian</option>
                     <option value="">Spanish</option>
@@ -37,7 +37,11 @@
             </label>
             <a href="#" class="header__link header__link_5">My Bag: 0 item(s)</a>
             <a href="./index.html" class="logo header__link_8"><img src="./img/logo.svg" alt="logo">FENGO</a>
-            <label class="header__search"><input type="text" class="header__input" placeholder="Find it here..." ><i class="fa fa-search"></i></label>
+            <div class="header__search">
+                <div class="header__search_drop-down"></div>
+                <input type="text" class="header__input" placeholder="Find it here..." aria-label="header__search">
+                <i class="fa fa-search"></i>
+            </div>
             <div class="header__flex">
                 <img src="./img/menu-mobile.svg" alt="menu">
                 <p class="header__text">NAVIGATION</p>
@@ -323,6 +327,9 @@
     <a href="#top" class="anchor">
         <img src="./img/anchor.png" alt="">
     </a>
+    <script src="js/Lists.js"></script>
+    <script src="js/Items.js"></script>
+    <script src="js/Carousel.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

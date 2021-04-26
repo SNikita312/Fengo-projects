@@ -134,6 +134,21 @@ li {
   justify-content: space-between;
   align-items: center;
   border: 1px solid #e1e1e1;
+  position: relative;
+}
+.header__search_drop-down {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  z-index: 1;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: none;
+  padding: 10px 13px;
+  min-width: 250px;
+}
+.header__search_drop-down > div {
+  margin-bottom: 10px;
 }
 .header__input {
   height: 38px;
@@ -168,6 +183,16 @@ li {
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: -4px;
+}
+.header__select {
+  border: none;
+  background: none;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 11px;
+  line-height: 19px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #7e7e7e;
 }
 
 .logo {
@@ -1007,6 +1032,11 @@ li {
   position: relative;
   margin-bottom: 50px;
 }
+.products__item-small-img {
+  height: 20px;
+  width: 20px;
+  background-color: #cccccc;
+}
 .products__item-img {
   height: 364px;
   background-color: #cccccc;
@@ -1509,6 +1539,10 @@ li {
     max-width: 260px;
     padding-right: 10px;
   }
+  .header__search_drop-down {
+    left: -10px;
+    min-width: 230px;
+  }
   .header__input {
     height: 32px;
   }
@@ -1809,6 +1843,10 @@ li {
     margin: 0;
     height: 402px;
   }
+  .products__item-small-img {
+    height: 40px;
+    width: 40px;
+  }
   .products__item-img {
     height: 296px;
     margin-bottom: 19px;
@@ -1915,6 +1953,9 @@ li {
   .header__search {
     grid-column: 7/span 3;
     margin-top: 16px;
+  }
+  .header__search_drop-down {
+    left: 0;
   }
 
   .menu {
@@ -2182,6 +2223,21 @@ li {
   }
   .header__search {
     grid-column: 8/span 2;
+    position: relative;
+  }
+  .header__search_drop-down {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: none;
+    padding: 10px 13px;
+    min-width: 250px;
+  }
+  .header__search_drop-down > div {
+    margin-bottom: 10px;
   }
 
   .menu {
