@@ -304,7 +304,7 @@ li
     &-box
       border: 1px solid rgba(255, 255, 255, 0.3)
       padding: 28px 8px 20px
-      margin: 0 10px
+      margin: 0 auto
       max-width: 300px
     &-h2
       color: #ffffff
@@ -1200,6 +1200,48 @@ li
   text-align: center
   padding-top: 10px
   opacity: .7
+body
+  padding-bottom: 50px
+.portfolio
+  height: 50px
+  background-color: #34495e
+  position: fixed
+  bottom: 0
+  width: 100%
+  z-index: 9999999
+  &__flex
+    height: 100%
+    display: flex
+    justify-content: space-around
+    align-items: center
+  &__link
+    color: #fff
+    font-style: italic
+.alert
+  position: fixed
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  align-items: center
+  top: 0
+  left: 0
+  height: 100vh
+  width: 100%
+  background-color: rgba(0, 0, 0, 0.78)
+  z-index: 1000
+  color: #fff
+  & > h1
+    font-size: 1.2em
+  & > i
+    font-size: 120px
+  &.disable
+    display: none
+.submit
+  background-color: #fff
+  font-size: 1em
+  padding: 20px 45px
+  color: #000
+  border-radius: 30px
 
 @import "ms724px"
 

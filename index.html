@@ -327,9 +327,30 @@
     <a href="#top" class="anchor">
         <img src="./img/anchor.png" alt="">
     </a>
+    <div class="portfolio">
+        <div class="portfolio__flex container">
+            <a href="http://d66356um.beget.tech/" class="portfolio__link">Вернуться в портфолио</a>
+            <a href="https://github.com/brave312guide/Fengo-projects" class="portfolio__link">Ветка на Github</a>
+        </div>
+    </div>
+    <div class="alert">
+        <h1>Чтобы вернуться в портфолио пройдите по ссылке</h1>
+        <a href="#" class="submit">ОК</a>
+        <i class="fa fa-long-arrow-alt-down"></i>
+    </div>
     <script src="js/Lists.js"></script>
     <script src="js/Items.js"></script>
     <script src="js/Carousel.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        const time = setTimeout(() => {
+            document.querySelector('.alert').classList.add('disable')
+        }, 7000)
+        document.querySelector('.submit').addEventListener('click', (e) => {
+            e.preventDefault()
+            document.querySelector('.alert').classList.add('disable')
+            clearInterval(time)
+        })
+    </script>
 </body>
 </html>
